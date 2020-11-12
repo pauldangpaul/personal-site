@@ -8,7 +8,8 @@ module.exports = {
     },
     devtool: 'inline-source-map',
     devServer: {
-        contentBase: './dist'
+        contentBase: './dist',
+        hot: true,
     },
     module: {
       rules: [
@@ -24,6 +25,10 @@ module.exports = {
             {
                 loader: "babel-loader"
             },
+        },
+        {
+            test: /\.css$/,
+            use: ['style-loader', 'css-loader'],
         },
         {
             test: /\.html$/,
@@ -46,7 +51,20 @@ module.exports = {
           })
     ],
     output: {
-        filename: '[name].bundle.js',
+        filename: '[name].[contenthash].js',
         path: path.resolve(__dirname, 'dist'),
-      },
-  };
+    },
+    optimization: {
+        moduleIds: 'hashed',
+        runtimeChunk: 'single',
+        splitChunks: {
+            cacheGroups: {
+                vendor: {
+                test: /[\\/]node_modules[\\/]/,
+                name: 'vendors',
+                chunks: 'all',
+                },
+            },
+        },
+    }
+};
