@@ -1,6 +1,6 @@
 import GreetingPage from "./components/GreetingPage";
-import React from 'react';
-import ReactDOM from 'react-dom';
+import * as React from 'react';
+import * as ReactDOM from 'react-dom';
  
 const title = 'Introducing Paul Dang';
  
