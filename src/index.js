@@ -1,4 +1,4 @@
-import GreetingPage from "./js/components/GreetingPage";
+import GreetingPage from "./components/GreetingPage";
 import React from 'react';
 import ReactDOM from 'react-dom';
  
