@@ -27,8 +27,19 @@ module.exports = {
             },
         },
         {
-            test: /\.css$/,
+            test: /\.css$/i,
             use: ['style-loader', 'css-loader'],
+        },
+        {
+            test: /\.svg$/,
+            use: [
+                {
+                    loader: 'svg-url-loader',
+                    options: {
+                        limit: 10000,
+                    }
+                }
+            ]
         },
         {
             test: /\.html$/,
@@ -55,7 +66,7 @@ module.exports = {
         path: path.resolve(__dirname, 'dist'),
     },
     optimization: {
-        moduleIds: 'hashed',
+        moduleIds: 'deterministic',
         runtimeChunk: 'single',
         splitChunks: {
             cacheGroups: {

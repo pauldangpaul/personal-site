@@ -1,0 +1,56 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap");
+
+::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
+}
+
+.container {
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
+
+  border: 2px solid var(--gs0);
+  border-radius: 8px;
+  height: 95vh;
+
+  font-family: "Roboto";
+}
+
+.container div {
+  scroll-snap-align: start;
+
+  height: 95vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container div:nth-child(1) {
+  background: pink;
+  color: brown;
+  font-size: 8rem;
+}
+.container div:nth-child(2) {
+  background: lightsalmon;
+  color: white;
+  font-size: 12rem;
+}
+.container div:nth-child(3) {
+  background: blanchedalmond;
+  color: orange;
+  font-size: 4rem;
+  font-style: italic;
+}
+.container div:nth-child(4) {
+  background: lightcoral;
+  color: white;
+  font-size: 2rem;
+}
+.container div:nth-child(5) {
+  background: lightgrey;
+}
+
+img {
+  margin-left: 4rem;
+  width: 6rem;
+}
