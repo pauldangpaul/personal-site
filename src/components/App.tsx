@@ -13,11 +13,23 @@ import {
   Theme,
   createStyles,
 } from "@material-ui/core/styles";
-import { Breadcrumbs, CssBaseline, Typography } from "@material-ui/core";
+import {
+  Breadcrumbs,
+  CssBaseline,
+  SwipeableDrawer,
+  Typography,
+} from "@material-ui/core";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
 import HomeIcon from "@material-ui/icons/Home";
+import MenuIcon from "@material-ui/icons/Menu";
+import CloseIcon from "@material-ui/icons/Close";
+import List from "@material-ui/core/List";
+import ListItem from "@material-ui/core/ListItem";
+import ListItemText from "@material-ui/core/ListItemText";
+import Divider from "@material-ui/core/Divider";
 
 import AppContentSwitch from "./AppContentSwitch";
+import { getMediaQueryType, mediaQuerySize } from "./DeviceIndicator";
 import DeviceIndicator from "./DeviceIndicator";
 
 const useStyles = makeStyles((theme: Theme) =>
@@ -36,6 +48,18 @@ const useStyles = makeStyles((theme: Theme) =>
       width: 20,
       height: 20,
     },
+    menuButton: {
+      position: "absolute",
+      right: "1em",
+      top: "1em",
+    },
+    listItem: {
+      width: "18em",
+      height: "5em",
+    },
+    menuDrawer: {
+      background: "#fafafa",
+    },
   })
 );
 
@@ -46,37 +70,71 @@ function handleClick(event: React.MouseEvent<HTMLAnchorElement, MouseEvent>) {
 
 const App = () => {
   const classes = useStyles();
-  const phones = useMediaQuery("(max-width:420px)");
-  const portaitTablets = useMediaQuery("(min-width:420px)");
-  const landscapeTablets = useMediaQuery("(min-width:768px)");
-  const laptops = useMediaQuery("(min-width:1224px)");
-  const desktops = useMediaQuery("(min-width:1824px)");
-  const giantMonitors = useMediaQuery("(min-width:3000px)");
+
+  const deviceSize = getMediaQueryType();
+
+  const [openMenu, setMenuOpen] = useState(false);
+
+  const menuItem = [
+    { link: "/", label: "HOME" },
+    { link: "/work", label: "WORK" },
+    { link: "/projects", label: "PROJECTS" },
+    { link: "/background", label: "BACKGROUND" },
+    { link: "/interests", label: "INTERESTS" },
+  ];
 
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline>
         <BrowserRouter>
-          <Breadcrumbs className={classes.navBar}>
-            <Link to="/" className={classes.link}>
-              <Typography>HOME</Typography>
-            </Link>
-            <Link to="/work" className={classes.link}>
-              <Typography>WORK</Typography>
-            </Link>
-            <Link to="/projects" className={classes.link}>
-              <Typography>PROJECTS</Typography>
-            </Link>
-            <Link to="/background" className={classes.link}>
-              <Typography>BACKGROUND</Typography>
-            </Link>
-            <Link to="/interests" className={classes.link}>
-              <Typography>INTERESTS</Typography>
-            </Link>
-          </Breadcrumbs>
+          {deviceSize > mediaQuerySize.portaitTablet && (
+            <Breadcrumbs className={classes.navBar}>
+              {menuItem.map((item) => (
+                <Link to={item.link} className={classes.link}>
+                  <Typography>{item.label}</Typography>
+                </Link>
+              ))}
+            </Breadcrumbs>
+          )}
+          <div className={classes.menuButton}>
+            {openMenu ? (
+              <CloseIcon onClick={() => setMenuOpen(false)} />
+            ) : (
+              <MenuIcon onClick={() => setMenuOpen(true)} />
+            )}
+          </div>
+          <SwipeableDrawer
+            anchor="right"
+            open={openMenu}
+            onClose={() => setMenuOpen(false)}
+            onOpen={() => {}}
+            classes={{ paper: classes.menuDrawer }}
+          >
+            <List>
+              {menuItem.map((item) => (
+                <>
+                  <Link
+                    to={item.link}
+                    className={classes.link}
+                    onClick={() => setMenuOpen(false)}
+                  >
+                    <ListItem className={classes.listItem}>
+                      <ListItemText>{item.label}</ListItemText>
+                    </ListItem>
+                  </Link>
+                  <Divider />
+                </>
+              ))}
+            </List>
+          </SwipeableDrawer>
+          <br />
           <AppContentSwitch />
         </BrowserRouter>
+
         <DeviceIndicator />
+
+        <br />
+        <i>Website under construction - check back soon!</i>
       </CssBaseline>
     </ThemeProvider>
   );

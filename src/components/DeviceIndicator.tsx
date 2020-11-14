@@ -71,22 +71,31 @@ function useWindowDimensions() {
   return windowDimensions;
 }
 
-function getMediaQueryType() {
-  const phones = useMediaQuery("(max-width:420px)");
-  const portaitTablets = useMediaQuery(
+export enum mediaQuerySize {
+  phone = 1,
+  portaitTablet = 2,
+  landscapeTablet = 3,
+  laptop = 4,
+  desktop = 5,
+}
+
+export function getMediaQueryType(): mediaQuerySize {
+  const phone = useMediaQuery("(max-width:420px)");
+  const portaitTablet = useMediaQuery(
     "(min-width:420px) and (max-width:768px)"
   );
-  const landscapeTablets = useMediaQuery(
+  const landscapeTablet = useMediaQuery(
     "(min-width:768px) and (max-width:1224px)"
   );
-  const laptops = useMediaQuery("(min-width:1224px) and (max-width:1824px)");
-  const desktops = useMediaQuery("(min-width:1824px)");
+  const laptop = useMediaQuery("(min-width:1224px) and (max-width:1824px)");
+  const desktop = useMediaQuery("(min-width:1824px)");
 
-  if (phones) return 1;
-  if (portaitTablets) return 2;
-  if (landscapeTablets) return 3;
-  if (laptops) return 4;
-  if (desktops) return 5;
+  if (phone) return mediaQuerySize.phone;
+  if (portaitTablet) return mediaQuerySize.portaitTablet;
+  if (landscapeTablet) return mediaQuerySize.landscapeTablet;
+  if (laptop) return mediaQuerySize.laptop;
+  if (desktop) return mediaQuerySize.desktop;
+  return 0;
 }
 
 const DeviceIndicator = () => {
@@ -96,11 +105,26 @@ const DeviceIndicator = () => {
   const mediaQueryType = getMediaQueryType();
 
   const devices = [
-    { icon: PhoneIcon, isCurrentDevice: mediaQueryType === 1 },
-    { icon: TabletPIcon, isCurrentDevice: mediaQueryType === 2 },
-    { icon: TabletLIcon, isCurrentDevice: mediaQueryType === 3 },
-    { icon: LaptopIcon, isCurrentDevice: mediaQueryType === 4 },
-    { icon: DesktopIcon, isCurrentDevice: mediaQueryType === 5 },
+    {
+      icon: PhoneIcon,
+      isCurrentDevice: mediaQueryType === mediaQuerySize.phone,
+    },
+    {
+      icon: TabletPIcon,
+      isCurrentDevice: mediaQueryType === mediaQuerySize.portaitTablet,
+    },
+    {
+      icon: TabletLIcon,
+      isCurrentDevice: mediaQueryType === mediaQuerySize.landscapeTablet,
+    },
+    {
+      icon: LaptopIcon,
+      isCurrentDevice: mediaQueryType === mediaQuerySize.laptop,
+    },
+    {
+      icon: DesktopIcon,
+      isCurrentDevice: mediaQueryType === mediaQuerySize.desktop,
+    },
   ];
 
   const deviceCards = devices.map((device) =>

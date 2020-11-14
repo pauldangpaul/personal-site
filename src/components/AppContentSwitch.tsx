@@ -17,13 +17,15 @@ import HomeIcon from "@material-ui/icons/Home";
 const AppContentSwitch = () => {
   return (
     <Switch>
-      <Route exact path="/">
-        Home Page
-      </Route>
-      <Route path="/work">About</Route>
-      <Route path="/projects">Project</Route>
-      <Route path="/background">Background</Route>
-      <Route path="/interests">Interests</Route>
+      <div style={{ display: "flex", justifyContent: "center" }}>
+        <Route exact path="/">
+          Home Page
+        </Route>
+        <Route path="/work">Work</Route>
+        <Route path="/projects">Projects</Route>
+        <Route path="/background">Background</Route>
+        <Route path="/interests">Interests</Route>
+      </div>
     </Switch>
   );
 };
