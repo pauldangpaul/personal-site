@@ -1,35 +1,18 @@
-import * as React from 'react';
-import { useState, useEffect } from 'react';
-import '../styles/HomePage.css';
-import * as constructionSign from '../assets/under-construction.svg';
+import * as React from "react";
+import { useState, useEffect } from "react";
+// import '../styles/HomePage.css';
+import * as constructionSign from "../assets/under-construction.svg";
+import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
+import { Button } from "@material-ui/core";
 
 const HomePage = () => {
-
   useEffect(() => {
     makeAnAlert();
   }, []);
 
-  return (
-    <div className="container">
-      <div>
-        Introducing
-      </div>
-      <div>
-        Paul Dang
-      </div>
-      <div>
-        Web Developer Extraordinaire
-      </div>
-      <div>
-        (site currently under construction)
-        <img src={constructionSign} alt="Under Construction Sign" />       
-      </div>
-      <div>
-        <i>Please check back at a later time.</i>
-      </div>
-    </div>
-  )
-}
+  return <div className="container">Hello there!!</div>;
+};
 
 function makeAnAlert() {
   console.log("blah");

@@ -3,6 +3,7 @@ const HtmlWebPackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
+    mode: 'development',
     entry: {
         index: './src/index.tsx'
     },
@@ -10,6 +11,7 @@ module.exports = {
     devServer: {
         contentBase: './dist',
         hot: true,
+        historyApiFallback: true
     },
     module: {
       rules: [
