@@ -1,7 +1,7 @@
 import * as React from "react";
 import { useState, useEffect } from "react";
 
-import { Link, BrowserRouter, NavLink, Switch, Route } from "react-router-dom";
+import { Link, HashRouter, NavLink, Switch, Route } from "react-router-dom";
 
 import theme from "../styles/createMuiTheme";
 
@@ -86,7 +86,7 @@ const App = () => {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline>
-        <BrowserRouter>
+        <HashRouter>
           {deviceSize > mediaQuerySize.portaitTablet && (
             <Breadcrumbs className={classes.navBar}>
               {menuItem.map((item) => (
@@ -129,7 +129,7 @@ const App = () => {
           </SwipeableDrawer>
           <br />
           <AppContentSwitch />
-        </BrowserRouter>
+        </HashRouter>
 
         <DeviceIndicator />
 

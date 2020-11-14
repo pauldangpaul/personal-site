@@ -24,8 +24,8 @@ const useStyles = makeStyles((theme: Theme) =>
       flexWrap: "wrap",
     },
     deviceCard: {
-      height: "8em",
-      padding: "1.5em",
+      height: "5em",
+      padding: "0.5em",
       margin: "0.5em",
       display: "flex",
       justifyContent: "center",
@@ -33,8 +33,8 @@ const useStyles = makeStyles((theme: Theme) =>
       opacity: 0.75,
     },
     deviceCardCurrent: {
-      height: "8em",
-      padding: "1.5rem",
+      height: "5em",
+      padding: "0.5rem",
       margin: "0.5em",
       display: "flex",
       justifyContent: "center",
