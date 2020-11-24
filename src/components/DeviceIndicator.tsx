@@ -15,30 +15,35 @@ import useMediaQuery from "@material-ui/core/useMediaQuery";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
+    deviceIndicator: {
+      position: "absolute",
+      width: "100%",
+      bottom: "3%",
+    },
     deviceContainer: {
-      margin: "2% 20%",
-      padding: "2em",
+      padding: "0.3em",
       display: "flex",
       justifyContent: "center",
       alignItems: "center",
       flexWrap: "wrap",
-      background: "rgba(0,100,200,0.65)",
     },
     deviceCard: {
       height: "5em",
       padding: "0.5em",
-      margin: "0.5em",
       display: "flex",
       justifyContent: "center",
+      background: "#EEE",
+      borderRadius: "25%",
       filter: "brightness(0.75)",
       opacity: 0.75,
     },
     deviceCardCurrent: {
       height: "5em",
       padding: "0.5rem",
-      margin: "0.5em",
       display: "flex",
       justifyContent: "center",
+      background: "#D9D9D9",
+      borderRadius: "15%",
     },
     deviceCardMedia: {
       width: "auto",
@@ -138,20 +143,21 @@ const DeviceIndicator = () => {
         />
       </Card>
     ) : (
-      <Card className={classes.deviceCard}>
-        <CardMedia
-          className={classes.deviceCardMedia}
-          component="img"
-          image={device.icon}
-        />
-      </Card>
+      // <Card className={classes.deviceCard}>
+      //   <CardMedia
+      //     className={classes.deviceCardMedia}
+      //     component="img"
+      //     image={device.icon}
+      //   />
+      // </Card>
+      <></>
     )
   );
 
   return (
-    <div className="DeviceIndicator">
+    <div className={classes.deviceIndicator}>
       <div className={classes.deviceContainer}>{deviceCards}</div>
-      {`Media Query Type ${mediaQueryType}, Height ${height}, Width ${width}`}
+      {/* {`Media Query Type ${mediaQueryType}, Height ${height}, Width ${width}`} */}
     </div>
   );
 };

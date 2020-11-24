@@ -35,13 +35,16 @@ import DeviceIndicator from "./DeviceIndicator";
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     navBar: {
-      top: 0,
+      top: "1em",
+      position: "absolute",
       display: "flex",
       justifyContent: "center",
+      width: "100%",
     },
     link: {
       display: "flex",
       textDecoration: "none",
+      color: "black",
     },
     icon: {
       marginRight: theme.spacing(0.5),
@@ -56,17 +59,13 @@ const useStyles = makeStyles((theme: Theme) =>
     listItem: {
       width: "18em",
       height: "5em",
+      paddingLeft: "2em",
     },
     menuDrawer: {
       background: "#fafafa",
     },
   })
 );
-
-function handleClick(event: React.MouseEvent<HTMLAnchorElement, MouseEvent>) {
-  event.preventDefault();
-  console.info("You clicked a breadcrumb.");
-}
 
 const App = () => {
   const classes = useStyles();
@@ -126,15 +125,17 @@ const App = () => {
                 </>
               ))}
             </List>
+            <div className={classes.menuButton}>
+              {openMenu ? (
+                <CloseIcon onClick={() => setMenuOpen(false)} />
+              ) : (
+                <MenuIcon onClick={() => setMenuOpen(true)} />
+              )}
+            </div>
+            <DeviceIndicator />
           </SwipeableDrawer>
-          <br />
           <AppContentSwitch />
         </HashRouter>
-
-        <DeviceIndicator />
-
-        <br />
-        <i>Website under construction - check back soon!</i>
       </CssBaseline>
     </ThemeProvider>
   );

@@ -21,31 +21,30 @@ import {
 import { Breadcrumbs, Button } from "@material-ui/core";
 import HomeIcon from "@material-ui/icons/Home";
 
-import ResumePdf from "../assets/resume.pdf";
+import HomePage from "./HomePage";
+import AboutPage from "./AboutPage";
+import ProjectsPage from "./ProjectsPage";
+import InterestsPage from "./InterestsPage";
+import WorkPage from "./WorkPage";
 
 const AppContentSwitch = () => {
   return (
     <Switch>
       <div style={{ display: "flex", justifyContent: "center" }}>
         <Route exact path="/">
-          Home Page
+          <HomePage />
         </Route>
-        <Route path="/work">Work</Route>
-        <Route path="/projects">Projects</Route>
-        <Route path="/interests">Interests</Route>
+        <Route path="/work">
+          <WorkPage />
+        </Route>
+        <Route path="/projects">
+          <ProjectsPage />
+        </Route>
+        <Route path="/interests">
+          <InterestsPage />
+        </Route>
         <Route path="/about">
-          <Button target="_blank" href="https://github.com/pauldangpaul/">
-            GitHub
-          </Button>
-          <Button
-            target="_blank"
-            href="https://www.linkedin.com/in/paul-dang-paul/"
-          >
-            LinkedIn
-          </Button>
-          <Button target="_blank" href={ResumePdf}>
-            Resume (PDF)
-          </Button>
+          <AboutPage />
         </Route>
       </div>
     </Switch>

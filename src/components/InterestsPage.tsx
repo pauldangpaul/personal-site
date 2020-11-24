@@ -3,9 +3,8 @@ import { useState, useEffect } from "react";
 
 import theme from "../styles/createMuiTheme";
 
-import laptopImg from "../assets/images/laptop.png";
-import helpingImg from "../assets/images/helping-hands.jpg";
-import headshotImg from "../assets/images/prof-headshot.jfif";
+import blocksImg from "../assets/images/blocks.jpg";
+import energyImg from "../assets/images/energy.jpg";
 
 import {
   ThemeProvider,
@@ -29,8 +28,7 @@ const useStyles = makeStyles((theme: Theme) =>
       justifyContent: "center",
       alignItems: "center",
       fontSize: "4rem",
-      flexWrap: "wrap",
-      background: "lightBlue",
+      background: "lightSalmon",
     },
     panel2: {
       scrollSnapAlign: "start",
@@ -39,7 +37,7 @@ const useStyles = makeStyles((theme: Theme) =>
       justifyContent: "center",
       alignItems: "center",
       fontSize: "4rem",
-      backgroundImage: `url(${helpingImg})`,
+      backgroundImage: `url(${energyImg})`,
       backgroundSize: "cover",
     },
     panel3: {
@@ -49,36 +47,22 @@ const useStyles = makeStyles((theme: Theme) =>
       justifyContent: "center",
       alignItems: "center",
       fontSize: "4rem",
-      backgroundImage: `url(${laptopImg})`,
+      backgroundImage: `url(${blocksImg})`,
       backgroundSize: "cover",
-    },
-    headshotImage: {
-      height: "12rem",
-      borderRadius: "10%",
-      marginLeft: "2rem",
     },
   })
 );
 
-const HomePage = () => {
+const InterestsPage = () => {
   const classes = useStyles();
 
   return (
     <div className={classes.container}>
-      <div className={classes.panel1}>
-        <div>Hello!</div>
-        <div>
-          <img
-            className={classes.headshotImage}
-            src={headshotImg}
-            alt="Photo of myself"
-          />
-        </div>
-      </div>
+      <div className={classes.panel1}>Interests</div>
       <div className={classes.panel2}></div>
       <div className={classes.panel3}></div>
     </div>
   );
 };
 
-export default HomePage;
+export default InterestsPage;
