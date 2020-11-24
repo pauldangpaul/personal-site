@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 
 import theme from "../styles/createMuiTheme";
 
-import headshotImg from "../assets/images/headshot.jfif";
+import headshotImg from "../assets/images/headshot.webp";
 import ResumePdf from "../assets/resume.pdf";
 
 import githubLogo from "../assets/icons/github.svg";

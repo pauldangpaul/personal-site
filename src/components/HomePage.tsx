@@ -3,9 +3,9 @@ import { useState, useEffect } from "react";
 
 import theme from "../styles/createMuiTheme";
 
-import laptopImg from "../assets/images/laptop.png";
-import helpingImg from "../assets/images/helping-hands.jpg";
-import headshotImg from "../assets/images/prof-headshot.jfif";
+import laptopImg from "../assets/images/laptop.webp";
+import helpingImg from "../assets/images/helping-hands.webp";
+import headshotImg from "../assets/images/prof-headshot.webp";
 
 import {
   ThemeProvider,

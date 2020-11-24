@@ -51,7 +51,7 @@ module.exports = {
             },
         },
         {
-            test: /\.(jfif|png|gif|jpe?g|pdf)$/,
+            test: /\.(webp|jfif|png|gif|jpe?g|pdf)$/,
             use: [
               {
                 loader: 'file-loader',

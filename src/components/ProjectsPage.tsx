@@ -3,9 +3,9 @@ import { useState, useEffect } from "react";
 
 import theme from "../styles/createMuiTheme";
 
-import walletImg from "../assets/images/wallet.jfif";
-import calculatorImg from "../assets/images/calculator.jpg";
-import shoppingImg from "../assets/images/shopping.jpg";
+import walletImg from "../assets/images/wallet.webp";
+import calculatorImg from "../assets/images/calculator.webp";
+import shoppingImg from "../assets/images/shopping.webp";
 
 import {
   ThemeProvider,
@@ -66,6 +66,7 @@ const useStyles = makeStyles((theme: Theme) =>
       fontSize: "4rem",
       background: `url(${shoppingImg})  center center`,
       backgroundSize: "cover",
+      color: "rgba(0,0,0,0.75)",
     },
   })
 );

@@ -3,8 +3,8 @@ import { useState, useEffect } from "react";
 
 import theme from "../styles/createMuiTheme";
 
-import blocksImg from "../assets/images/blocks.jpg";
-import energyImg from "../assets/images/energy.jpg";
+import blocksImg from "../assets/images/blocks.webp";
+import energyImg from "../assets/images/energy.webp";
 
 import {
   ThemeProvider,

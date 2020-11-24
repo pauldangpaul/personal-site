@@ -3,8 +3,8 @@ import { useState, useEffect } from "react";
 
 import theme from "../styles/createMuiTheme";
 
-import orangeImg from "../assets/images/orange.jpg";
-import chicagoImg from "../assets/images/chicago.jpg";
+import orangeImg from "../assets/images/orange.webp";
+import chicagoImg from "../assets/images/chicago.webp";
 
 import {
   ThemeProvider,
