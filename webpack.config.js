@@ -50,6 +50,17 @@ module.exports = {
                 loader: "html-loader"
             },
         },
+        {
+            test: /\.(pdf)$/,
+            use: [
+              {
+                loader: 'file-loader',
+                options: {
+                  name: '[name].[ext]'
+                }
+              }
+            ]
+        }
       ]
     },
     resolve: {

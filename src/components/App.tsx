@@ -79,8 +79,8 @@ const App = () => {
     { link: "/", label: "HOME" },
     { link: "/work", label: "WORK" },
     { link: "/projects", label: "PROJECTS" },
-    { link: "/background", label: "BACKGROUND" },
     { link: "/interests", label: "INTERESTS" },
+    { link: "/about", label: "ABOUT" },
   ];
 
   return (

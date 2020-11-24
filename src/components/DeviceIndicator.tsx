@@ -16,12 +16,13 @@ import useMediaQuery from "@material-ui/core/useMediaQuery";
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     deviceContainer: {
-      margin: "2% 10%",
+      margin: "2% 20%",
       padding: "2em",
       display: "flex",
-      justifyContent: "space-around",
+      justifyContent: "center",
       alignItems: "center",
       flexWrap: "wrap",
+      background: "rgba(0,100,200,0.65)",
     },
     deviceCard: {
       height: "5em",
