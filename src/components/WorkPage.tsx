@@ -37,7 +37,7 @@ const useStyles = makeStyles((theme: Theme) =>
       justifyContent: "center",
       alignItems: "center",
       fontSize: "4rem",
-      backgroundImage: `url(${orangeImg})`,
+      background: `url(${orangeImg}) center center`,
       backgroundSize: "cover",
     },
     panel3: {
@@ -47,7 +47,7 @@ const useStyles = makeStyles((theme: Theme) =>
       justifyContent: "center",
       alignItems: "center",
       fontSize: "4rem",
-      backgroundImage: `url(${chicagoImg})`,
+      background: `url(${chicagoImg}) center center`,
       backgroundSize: "cover",
     },
   })

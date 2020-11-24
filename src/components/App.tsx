@@ -63,6 +63,9 @@ const useStyles = makeStyles((theme: Theme) =>
     },
     menuDrawer: {
       background: "#fafafa",
+      display: "flex",
+      flexDirection: "column",
+      justifyContent: "space-between",
     },
   })
 );
@@ -78,7 +81,7 @@ const App = () => {
     { link: "/", label: "HOME" },
     { link: "/work", label: "WORK" },
     { link: "/projects", label: "PROJECTS" },
-    { link: "/interests", label: "INTERESTS" },
+    { link: "/small-talk", label: "SMALL TALK" },
     { link: "/about", label: "ABOUT" },
   ];
 

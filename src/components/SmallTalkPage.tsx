@@ -35,9 +35,10 @@ const useStyles = makeStyles((theme: Theme) =>
       height: "100vh",
       display: "flex",
       justifyContent: "center",
-      alignItems: "center",
+      alignItems: "flex-start",
+      padding: "5%",
       fontSize: "4rem",
-      backgroundImage: `url(${energyImg})`,
+      background: `url(${energyImg}) center center`,
       backgroundSize: "cover",
     },
     panel3: {
@@ -45,24 +46,25 @@ const useStyles = makeStyles((theme: Theme) =>
       height: "100vh",
       display: "flex",
       justifyContent: "center",
-      alignItems: "center",
+      alignItems: "flex-start",
+      padding: "5%",
       fontSize: "4rem",
-      backgroundImage: `url(${blocksImg})`,
+      background: `url(${blocksImg})  center center`,
       backgroundSize: "cover",
     },
   })
 );
 
-const InterestsPage = () => {
+const SmallTalkPage = () => {
   const classes = useStyles();
 
   return (
     <div className={classes.container}>
-      <div className={classes.panel1}>Interests</div>
-      <div className={classes.panel2}></div>
-      <div className={classes.panel3}></div>
+      <div className={classes.panel1}>Small Talk</div>
+      <div className={classes.panel2}>Background</div>
+      <div className={classes.panel3}>Interests</div>
     </div>
   );
 };
 
-export default InterestsPage;
+export default SmallTalkPage;

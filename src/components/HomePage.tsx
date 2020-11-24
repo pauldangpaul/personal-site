@@ -39,7 +39,7 @@ const useStyles = makeStyles((theme: Theme) =>
       justifyContent: "center",
       alignItems: "center",
       fontSize: "4rem",
-      backgroundImage: `url(${helpingImg})`,
+      background: `url(${helpingImg}) center center`,
       backgroundSize: "cover",
     },
     panel3: {
@@ -49,13 +49,20 @@ const useStyles = makeStyles((theme: Theme) =>
       justifyContent: "center",
       alignItems: "center",
       fontSize: "4rem",
-      backgroundImage: `url(${laptopImg})`,
+      background: `url(${laptopImg}) center center`,
       backgroundSize: "cover",
     },
     headshotImage: {
       height: "12rem",
       borderRadius: "10%",
       marginLeft: "2rem",
+    },
+    greetingTitle: {
+      display: "flex",
+      flexDirection: "row",
+      justifyContent: "center",
+      alignItems: "center",
+      flexWrap: "wrap-reverse",
     },
   })
 );
@@ -66,13 +73,15 @@ const HomePage = () => {
   return (
     <div className={classes.container}>
       <div className={classes.panel1}>
-        <div>Hello!</div>
-        <div>
-          <img
-            className={classes.headshotImage}
-            src={headshotImg}
-            alt="Photo of myself"
-          />
+        <div className={classes.greetingTitle}>
+          <div>Hello!</div>
+          <div>
+            <img
+              className={classes.headshotImage}
+              src={headshotImg}
+              alt="Photo of myself"
+            />
+          </div>
         </div>
       </div>
       <div className={classes.panel2}></div>

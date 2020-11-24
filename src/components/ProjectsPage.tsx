@@ -5,6 +5,7 @@ import theme from "../styles/createMuiTheme";
 
 import walletImg from "../assets/images/wallet.jfif";
 import calculatorImg from "../assets/images/calculator.jpg";
+import shoppingImg from "../assets/images/shopping.jpg";
 
 import {
   ThemeProvider,
@@ -34,20 +35,36 @@ const useStyles = makeStyles((theme: Theme) =>
       scrollSnapAlign: "start",
       height: "100vh",
       display: "flex",
-      justifyContent: "center",
-      alignItems: "center",
+      justifyContent: "flex-start",
+      alignItems: "flex-end",
+      padding: "5%",
       fontSize: "4rem",
-      backgroundImage: `url(${walletImg})`,
+      background: `url(${walletImg})  center center`,
       backgroundSize: "cover",
+      color: "lightsalmon",
     },
     panel3: {
       scrollSnapAlign: "start",
       height: "100vh",
       display: "flex",
-      justifyContent: "center",
-      alignItems: "center",
+      justifyContent: "flex-end",
+      alignItems: "flex-end",
+      padding: "5%",
       fontSize: "4rem",
-      backgroundImage: `url(${calculatorImg})`,
+      background: `url(${calculatorImg})  center center`,
+      backgroundSize: "cover",
+      color: "orange",
+      textShadow: "3px 4px black",
+    },
+    panel4: {
+      scrollSnapAlign: "start",
+      height: "100vh",
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "flex-start",
+      padding: "5%",
+      fontSize: "4rem",
+      background: `url(${shoppingImg})  center center`,
       backgroundSize: "cover",
     },
   })
@@ -59,8 +76,9 @@ const ProjectsPage = () => {
   return (
     <div className={classes.container}>
       <div className={classes.panel1}>Projects</div>
-      <div className={classes.panel2}></div>
-      <div className={classes.panel3}></div>
+      <div className={classes.panel2}>Open Source</div>
+      <div className={classes.panel3}>Quick Calculator</div>
+      <div className={classes.panel4}>Sat's Right!</div>
     </div>
   );
 };
