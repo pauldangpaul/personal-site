@@ -8,6 +8,15 @@ let theme = createMuiTheme({
   palette: {
     primary: orange,
   },
+  breakpoints: {
+    values: {
+      xs: 0,
+      sm: 420,
+      md: 768,
+      lg: 1224,
+      xl: 1824,
+    },
+  },
 });
 
 theme = responsiveFontSizes(theme);

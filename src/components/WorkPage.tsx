@@ -7,6 +7,11 @@ import orangeImg from "../assets/images/orange.webp";
 import chicagoImg from "../assets/images/chicago.webp";
 
 import {
+  getMediaQueryType,
+  mediaQuerySize,
+} from "../components/DeviceIndicator";
+
+import {
   ThemeProvider,
   makeStyles,
   Theme,
@@ -28,6 +33,7 @@ const useStyles = makeStyles((theme: Theme) =>
       justifyContent: "center",
       alignItems: "center",
       fontSize: "4rem",
+      padding: "2rem",
       background: "lightgreen",
     },
     panel2: {
@@ -39,6 +45,7 @@ const useStyles = makeStyles((theme: Theme) =>
       fontSize: "4rem",
       background: `url(${orangeImg}) center center`,
       backgroundSize: "cover",
+      padding: "2rem",
     },
     panel3: {
       scrollSnapAlign: "start",
@@ -49,6 +56,18 @@ const useStyles = makeStyles((theme: Theme) =>
       fontSize: "4rem",
       background: `url(${chicagoImg}) center center`,
       backgroundSize: "cover",
+      padding: "2rem",
+    },
+    panelHeading: {
+      [theme.breakpoints.down("sm")]: {
+        fontSize: "3rem",
+      },
+      [theme.breakpoints.up("md")]: {
+        fontSize: "5rem",
+      },
+      [theme.breakpoints.up("lg")]: {
+        fontSize: "7rem",
+      },
     },
   })
 );
@@ -58,7 +77,9 @@ const WorkPage = () => {
 
   return (
     <div className={classes.container}>
-      <div className={classes.panel1}>My Work Experience</div>
+      <div className={classes.panel1}>
+        <div className={classes.panelHeading}>Work Experience</div>
+      </div>
       <div className={classes.panel2}></div>
       <div className={classes.panel3}></div>
     </div>

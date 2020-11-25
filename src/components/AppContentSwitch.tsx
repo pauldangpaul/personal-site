@@ -22,7 +22,7 @@ import { Breadcrumbs, Button } from "@material-ui/core";
 import HomeIcon from "@material-ui/icons/Home";
 
 import HomePage from "./HomePage";
-import AboutPage from "./AboutPage";
+import LinksPage from "./LinksPage";
 import ProjectsPage from "./ProjectsPage";
 import SmallTalkPage from "./SmallTalkPage";
 import WorkPage from "./WorkPage";
@@ -43,8 +43,8 @@ const AppContentSwitch = () => {
         <Route path="/small-talk">
           <SmallTalkPage />
         </Route>
-        <Route path="/about">
-          <AboutPage />
+        <Route path="/links">
+          <LinksPage />
         </Route>
       </div>
     </Switch>

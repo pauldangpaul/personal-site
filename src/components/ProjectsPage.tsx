@@ -28,7 +28,6 @@ const useStyles = makeStyles((theme: Theme) =>
       display: "flex",
       justifyContent: "center",
       alignItems: "center",
-      fontSize: "4rem",
       background: "lightyellow",
     },
     panel2: {
@@ -37,8 +36,7 @@ const useStyles = makeStyles((theme: Theme) =>
       display: "flex",
       justifyContent: "flex-start",
       alignItems: "flex-end",
-      padding: "5%",
-      fontSize: "4rem",
+      padding: "12%",
       background: `url(${walletImg})  center center`,
       backgroundSize: "cover",
       color: "lightsalmon",
@@ -47,26 +45,46 @@ const useStyles = makeStyles((theme: Theme) =>
       scrollSnapAlign: "start",
       height: "100vh",
       display: "flex",
-      justifyContent: "flex-end",
-      alignItems: "flex-end",
-      padding: "5%",
-      fontSize: "4rem",
-      background: `url(${calculatorImg})  center center`,
-      backgroundSize: "cover",
-      color: "orange",
-      textShadow: "3px 4px black",
-    },
-    panel4: {
-      scrollSnapAlign: "start",
-      height: "100vh",
-      display: "flex",
       justifyContent: "center",
       alignItems: "flex-start",
-      padding: "5%",
-      fontSize: "4rem",
+      padding: "12%",
       background: `url(${shoppingImg})  center center`,
       backgroundSize: "cover",
       color: "rgba(0,0,0,0.75)",
+    },
+    heading: {
+      [theme.breakpoints.down("sm")]: {
+        fontSize: "2rem",
+      },
+      [theme.breakpoints.up("md")]: {
+        fontSize: "3rem",
+      },
+      [theme.breakpoints.up("lg")]: {
+        fontSize: "4rem",
+      },
+    },
+    subHeading: {
+      [theme.breakpoints.down("sm")]: {
+        fontSize: "1rem",
+      },
+      [theme.breakpoints.up("md")]: {
+        fontSize: "1.25rem",
+      },
+      [theme.breakpoints.up("lg")]: {
+        fontSize: "1.5rem",
+      },
+    },
+    paragraph: {
+      [theme.breakpoints.down("sm")]: {
+        fontSize: "1rem",
+      },
+      [theme.breakpoints.up("md")]: {
+        fontSize: "1rem",
+      },
+      [theme.breakpoints.up("lg")]: {
+        fontSize: "1rem",
+      },
+      fontStyle: "italic",
     },
   })
 );
@@ -76,10 +94,15 @@ const ProjectsPage = () => {
 
   return (
     <div className={classes.container}>
-      <div className={classes.panel1}>Projects</div>
-      <div className={classes.panel2}>Open Source</div>
-      <div className={classes.panel3}>Quick Calculator</div>
-      <div className={classes.panel4}>Sat's Right!</div>
+      <div className={classes.panel1}>
+        <div className={classes.heading}>Projects</div>
+      </div>
+      <div className={classes.panel2}>
+        <div className={classes.heading}>S.S. Converter</div>
+      </div>
+      <div className={classes.panel3}>
+        <div className={classes.heading}>Sat's Right!</div>
+      </div>
     </div>
   );
 };

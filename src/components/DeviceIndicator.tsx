@@ -141,6 +141,7 @@ const DeviceIndicator = () => {
         />
       </Card>
     ) : (
+      // // Display other device icons
       // <Card className={classes.deviceCard}>
       //   <CardMedia
       //     className={classes.deviceCardMedia}

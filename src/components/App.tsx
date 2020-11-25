@@ -79,10 +79,10 @@ const App = () => {
 
   const menuItem = [
     { link: "/", label: "HOME" },
-    { link: "/work", label: "WORK" },
+    { link: "/work", label: "WORK + SKILLS" },
     { link: "/projects", label: "PROJECTS" },
     { link: "/small-talk", label: "SMALL TALK" },
-    { link: "/about", label: "ABOUT" },
+    { link: "/links", label: "LINKS" },
   ];
 
   return (
