@@ -40,6 +40,7 @@ const useStyles = makeStyles((theme: Theme) =>
       display: "flex",
       justifyContent: "center",
       width: "100%",
+      zIndex: 1,
     },
     link: {
       display: "flex",
@@ -55,6 +56,7 @@ const useStyles = makeStyles((theme: Theme) =>
       position: "absolute",
       right: "1em",
       top: "1em",
+      zIndex: 1,
     },
     listItem: {
       width: "18em",

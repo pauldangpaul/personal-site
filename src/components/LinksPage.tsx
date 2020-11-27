@@ -20,12 +20,6 @@ import { Button } from "@material-ui/core";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
-    container: {
-      scrollSnapType: "y mandatory",
-      overflowY: "scroll",
-      height: "100vh",
-      width: "100%",
-    },
     panel1: {
       scrollSnapAlign: "start",
       height: "100vh",
@@ -82,7 +76,7 @@ const LinksPage = () => {
   const classes = useStyles();
 
   return (
-    <div className={classes.container}>
+    <>
       <div className={classes.panel1}>
         <div className={classes.profileCard}>
           <div>
@@ -123,7 +117,7 @@ const LinksPage = () => {
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

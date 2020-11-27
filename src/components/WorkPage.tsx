@@ -11,6 +11,8 @@ import {
   mediaQuerySize,
 } from "../components/DeviceIndicator";
 
+import KeyboardArrowDownIcon from "@material-ui/icons/KeyboardArrowDown";
+
 import {
   ThemeProvider,
   makeStyles,
@@ -20,12 +22,6 @@ import {
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
-    container: {
-      scrollSnapType: "y mandatory",
-      overflowY: "scroll",
-      height: "100vh",
-      width: "100%",
-    },
     panel1: {
       scrollSnapAlign: "start",
       height: "100vh",
@@ -35,6 +31,7 @@ const useStyles = makeStyles((theme: Theme) =>
       fontSize: "4rem",
       padding: "2rem",
       background: "lightgreen",
+      position: "relative",
     },
     panel2: {
       scrollSnapAlign: "start",
@@ -46,6 +43,7 @@ const useStyles = makeStyles((theme: Theme) =>
       background: `url(${orangeImg}) center center`,
       backgroundSize: "cover",
       padding: "2rem",
+      position: "relative",
     },
     panel3: {
       scrollSnapAlign: "start",
@@ -57,6 +55,7 @@ const useStyles = makeStyles((theme: Theme) =>
       background: `url(${chicagoImg}) center center`,
       backgroundSize: "cover",
       padding: "2rem",
+      position: "relative",
     },
     panelHeading: {
       [theme.breakpoints.down("sm")]: {
@@ -69,6 +68,10 @@ const useStyles = makeStyles((theme: Theme) =>
         fontSize: "7rem",
       },
     },
+    downArrow: {
+      position: "absolute",
+      bottom: "7%",
+    },
   })
 );
 
@@ -76,13 +79,26 @@ const WorkPage = () => {
   const classes = useStyles();
 
   return (
-    <div className={classes.container}>
+    <>
       <div className={classes.panel1}>
         <div className={classes.panelHeading}>Work Experience</div>
+        <div className={classes.downArrow}>
+          <KeyboardArrowDownIcon />
+        </div>
       </div>
-      <div className={classes.panel2}></div>
-      <div className={classes.panel3}></div>
-    </div>
+      <div className={classes.panel2}>
+        {" "}
+        <div className={classes.downArrow}>
+          <KeyboardArrowDownIcon />
+        </div>
+      </div>
+      <div className={classes.panel3}>
+        {" "}
+        <div className={classes.downArrow}>
+          <KeyboardArrowDownIcon style={{ color: "white" }} />
+        </div>
+      </div>
+    </>
   );
 };
 

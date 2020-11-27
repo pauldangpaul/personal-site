@@ -2,8 +2,11 @@ import * as React from "react";
 import { useState, useEffect } from "react";
 import theme from "../styles/createMuiTheme";
 import headshotImg from "../assets/images/prof-headshot.webp";
+import whiteImg from "../assets/images/white.webp";
 import { CSSTransition } from "react-transition-group";
 import "../styles/animations.css";
+import "../styles/react-transitions-animations.css";
+import KeyboardArrowDownIcon from "@material-ui/icons/KeyboardArrowDown";
 
 import {
   ThemeProvider,
@@ -14,12 +17,6 @@ import {
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
-    container: {
-      scrollSnapType: "y mandatory",
-      overflowY: "scroll",
-      height: "100vh",
-      width: "100%",
-    },
     panel: {
       scrollSnapAlign: "start",
       height: "100vh",
@@ -28,8 +25,9 @@ const useStyles = makeStyles((theme: Theme) =>
       alignItems: "center",
       fontSize: "4rem",
       flexWrap: "wrap",
-      background: "#EEE",
+      background: `url(${whiteImg})  center center`,
       padding: "2rem",
+      position: "relative",
     },
     introCard: {
       display: "flex",
@@ -99,6 +97,10 @@ const useStyles = makeStyles((theme: Theme) =>
       },
       fontStyle: "italic",
     },
+    downArrow: {
+      position: "absolute",
+      bottom: "7%",
+    },
   })
 );
 
@@ -112,7 +114,7 @@ const HomePage = () => {
   }, []);
 
   return (
-    <div className={classes.container}>
+    <>
       <div className={classes.panel}>
         <div className={classes.introCard}>
           <CSSTransition
@@ -145,8 +147,11 @@ const HomePage = () => {
             </div>
           </CSSTransition>
         </div>
+        <div className={classes.downArrow}>
+          <KeyboardArrowDownIcon />
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 // TODO: https://www.npmjs.com/package/react-animate-on-scroll

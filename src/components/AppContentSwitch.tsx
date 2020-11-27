@@ -27,12 +27,36 @@ import ProjectsPage from "./ProjectsPage";
 import SmallTalkPage from "./SmallTalkPage";
 import WorkPage from "./WorkPage";
 
+const useStyles = makeStyles((theme: Theme) =>
+  createStyles({
+    container: {
+      scrollSnapType: "y mandatory",
+      overflowY: "scroll",
+      height: "100vh",
+      width: "100%",
+    },
+  })
+);
+
 const AppContentSwitch = () => {
+  const classes = useStyles();
+
   return (
     <Switch>
-      <div style={{ display: "flex", justifyContent: "center" }}>
+      <div
+        // style={{
+        //   display: "flex",
+        //   justifyContent: "center",
+        //   flexDirection: "column",
+        // }}
+        className={classes.container}
+      >
         <Route exact path="/">
           <HomePage />
+          <WorkPage />
+          <ProjectsPage />
+          <SmallTalkPage />
+          <LinksPage />
         </Route>
         <Route path="/work">
           <WorkPage />

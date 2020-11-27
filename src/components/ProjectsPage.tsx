@@ -16,12 +16,6 @@ import {
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
-    container: {
-      scrollSnapType: "y mandatory",
-      overflowY: "scroll",
-      height: "100vh",
-      width: "100%",
-    },
     panel1: {
       scrollSnapAlign: "start",
       height: "100vh",
@@ -93,7 +87,7 @@ const ProjectsPage = () => {
   const classes = useStyles();
 
   return (
-    <div className={classes.container}>
+    <>
       <div className={classes.panel1}>
         <div className={classes.heading}>Projects</div>
       </div>
@@ -103,7 +97,7 @@ const ProjectsPage = () => {
       <div className={classes.panel3}>
         <div className={classes.heading}>Sat's Right!</div>
       </div>
-    </div>
+    </>
   );
 };
 

@@ -1,0 +1,33 @@
+.fadeInUp-enter {
+  opacity: 0;
+  position: relative;
+  top: 30px;
+}
+
+.fadeInUp-enter-active {
+  opacity: 1;
+  top: 0px;
+  transition: all 1s ease-out;
+}
+
+.fadeInUp-enter-done {
+  opacity: 1;
+  position: unset;
+}
+
+.fadeInRight-enter {
+  opacity: 0;
+  position: relative;
+  left: -30px;
+}
+
+.fadeInRight-enter-active {
+  opacity: 1;
+  left: 0px;
+  transition: all 1s ease-out;
+}
+
+.fadeInRight-enter-done {
+  opacity: 1;
+  position: unset;
+}
