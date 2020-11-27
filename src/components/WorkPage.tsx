@@ -12,6 +12,7 @@ import {
 } from "../components/DeviceIndicator";
 
 import KeyboardArrowDownIcon from "@material-ui/icons/KeyboardArrowDown";
+import { useInView } from "react-intersection-observer";
 
 import {
   ThemeProvider,
@@ -77,6 +78,11 @@ const useStyles = makeStyles((theme: Theme) =>
 
 const WorkPage = () => {
   const classes = useStyles();
+
+  const workExpRef = useInView({
+    threshold: 0.5,
+    triggerOnce: true,
+  });
 
   return (
     <>

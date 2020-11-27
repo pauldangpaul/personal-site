@@ -18,6 +18,9 @@ import {
 } from "@material-ui/core/styles";
 import { Button } from "@material-ui/core";
 
+import { useInView } from "react-intersection-observer";
+import { CSSTransition } from "react-transition-group";
+
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     panel1: {
@@ -29,6 +32,9 @@ const useStyles = makeStyles((theme: Theme) =>
       fontSize: "4rem",
       background: "#EEE",
       padding: "10%",
+    },
+    hidden: {
+      opacity: 0,
     },
     profileCard: {
       display: "flex",
@@ -75,47 +81,60 @@ const useStyles = makeStyles((theme: Theme) =>
 const LinksPage = () => {
   const classes = useStyles();
 
+  const linksRef = useInView({
+    threshold: 0.5,
+    triggerOnce: true,
+  });
+
   return (
     <>
-      <div className={classes.panel1}>
-        <div className={classes.profileCard}>
-          <div>
-            <img
-              className={classes.headshotImage}
-              src={headshotImg}
-              alt="Photo of myself"
-            />
+      <div className={classes.panel1} ref={linksRef.ref}>
+        <CSSTransition
+          in={linksRef.inView}
+          timeout={5000}
+          classNames="fadeInUp"
+        >
+          <div
+            className={linksRef.inView ? classes.profileCard : classes.hidden}
+          >
+            <div>
+              <img
+                className={classes.headshotImage}
+                src={headshotImg}
+                alt="Photo of myself"
+              />
+            </div>
+            <div className={classes.iconLinksContainer}>
+              <Button target="_blank" href="https://github.com/pauldangpaul/">
+                <img
+                  className={classes.iconLogo}
+                  src={githubLogo}
+                  alt="GitHub Logo"
+                />
+                GitHub
+              </Button>
+              <Button
+                target="_blank"
+                href="https://www.linkedin.com/in/paul-dang-paul/"
+              >
+                <img
+                  className={classes.iconLogo}
+                  src={linkedinLogo}
+                  alt="Linkedin Logo"
+                />
+                LinkedIn
+              </Button>
+              <Button target="_blank" href={ResumePdf}>
+                <img
+                  className={classes.iconLogo}
+                  src={resumeLogo}
+                  alt="Resume Download Icon"
+                />
+                Resume (PDF)
+              </Button>
+            </div>
           </div>
-          <div className={classes.iconLinksContainer}>
-            <Button target="_blank" href="https://github.com/pauldangpaul/">
-              <img
-                className={classes.iconLogo}
-                src={githubLogo}
-                alt="GitHub Logo"
-              />
-              GitHub
-            </Button>
-            <Button
-              target="_blank"
-              href="https://www.linkedin.com/in/paul-dang-paul/"
-            >
-              <img
-                className={classes.iconLogo}
-                src={linkedinLogo}
-                alt="Linkedin Logo"
-              />
-              LinkedIn
-            </Button>
-            <Button target="_blank" href={ResumePdf}>
-              <img
-                className={classes.iconLogo}
-                src={resumeLogo}
-                alt="Resume Download Icon"
-              />
-              Resume (PDF)
-            </Button>
-          </div>
-        </div>
+        </CSSTransition>
       </div>
     </>
   );

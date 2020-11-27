@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import theme from "../styles/createMuiTheme";
 import headshotImg from "../assets/images/prof-headshot.webp";
 import whiteImg from "../assets/images/white.webp";
+import { useInView } from "react-intersection-observer";
 import { CSSTransition } from "react-transition-group";
 import "../styles/animations.css";
 import "../styles/react-transitions-animations.css";
@@ -101,24 +102,29 @@ const useStyles = makeStyles((theme: Theme) =>
       position: "absolute",
       bottom: "7%",
     },
+    hidden: {
+      opacity: 0,
+    },
   })
 );
 
 const HomePage = () => {
   const classes = useStyles();
 
-  let [startAnimation, setStartAnimation] = useState(false);
-
-  useEffect(() => {
-    setTimeout(() => setStartAnimation(true), 0);
-  }, []);
+  const homeRef = useInView({
+    threshold: 0.5,
+    triggerOnce: true,
+  });
 
   return (
     <>
       <div className={classes.panel}>
-        <div className={classes.introCard}>
+        <div
+          className={homeRef.inView ? classes.introCard : classes.hidden}
+          ref={homeRef.ref}
+        >
           <CSSTransition
-            in={startAnimation}
+            in={homeRef.inView}
             timeout={5000}
             classNames="fadeInRight"
           >
@@ -129,7 +135,7 @@ const HomePage = () => {
             />
           </CSSTransition>
           <CSSTransition
-            in={startAnimation}
+            in={homeRef.inView}
             timeout={5000}
             classNames="fadeInUp"
           >

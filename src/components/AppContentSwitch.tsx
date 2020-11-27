@@ -55,7 +55,6 @@ const AppContentSwitch = () => {
           <HomePage />
           <WorkPage />
           <ProjectsPage />
-          <SmallTalkPage />
           <LinksPage />
         </Route>
         <Route path="/work">

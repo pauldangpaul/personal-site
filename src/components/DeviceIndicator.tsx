@@ -110,22 +110,27 @@ const DeviceIndicator = () => {
 
   const devices = [
     {
+      deviceId: mediaQuerySize.phone.toString(),
       icon: PhoneIcon,
       isCurrentDevice: mediaQueryType === mediaQuerySize.phone,
     },
     {
+      deviceId: mediaQuerySize.portaitTablet.toString(),
       icon: TabletPIcon,
       isCurrentDevice: mediaQueryType === mediaQuerySize.portaitTablet,
     },
     {
+      deviceId: mediaQuerySize.landscapeTablet.toString(),
       icon: TabletLIcon,
       isCurrentDevice: mediaQueryType === mediaQuerySize.landscapeTablet,
     },
     {
+      deviceId: mediaQuerySize.laptop.toString(),
       icon: LaptopIcon,
       isCurrentDevice: mediaQueryType === mediaQuerySize.laptop,
     },
     {
+      deviceId: mediaQuerySize.desktop.toString(),
       icon: DesktopIcon,
       isCurrentDevice: mediaQueryType === mediaQuerySize.desktop,
     },
@@ -133,7 +138,7 @@ const DeviceIndicator = () => {
 
   const deviceCards = devices.map((device) =>
     device.isCurrentDevice ? (
-      <Card className={classes.deviceCardCurrent}>
+      <Card className={classes.deviceCardCurrent} id={device.deviceId}>
         <CardMedia
           className={classes.deviceCardMedia}
           component="img"
