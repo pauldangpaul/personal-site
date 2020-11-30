@@ -23,18 +23,18 @@ const useStyles = makeStyles((theme: Theme) =>
       height: "100vh",
       display: "flex",
       justifyContent: "center",
-      alignItems: "center",
+      alignItems: "flex-start",
       fontSize: "4rem",
       flexWrap: "wrap",
       background: `url(${whiteImg})  center center`,
-      padding: "2rem",
+      padding: "3rem 1rem",
       position: "relative",
     },
     introCard: {
       display: "flex",
+      flexDirection: "column",
       justifyContent: "center",
       alignItems: "center",
-      flexWrap: "wrap",
     },
     introCardText: {
       display: "flex",
@@ -50,7 +50,7 @@ const useStyles = makeStyles((theme: Theme) =>
     },
     headshotImage: {
       [theme.breakpoints.down("xs")]: {
-        height: "12rem",
+        height: "10rem",
       },
       [theme.breakpoints.up("sm")]: {
         height: "16rem",
@@ -62,7 +62,7 @@ const useStyles = makeStyles((theme: Theme) =>
         height: "18rem",
       },
       borderRadius: "10%",
-      margin: "2rem",
+      margin: "1rem",
     },
     heading: {
       [theme.breakpoints.down("sm")]: {
@@ -99,8 +99,7 @@ const useStyles = makeStyles((theme: Theme) =>
       fontStyle: "italic",
     },
     downArrow: {
-      position: "absolute",
-      bottom: "5%",
+      display: "flex",
     },
     hidden: {
       opacity: 0,
@@ -169,9 +168,9 @@ const HomePage = () => {
               </div>
             </div>
           </CSSTransition>
-        </div>
-        <div className={classes.downArrow}>
-          <KeyboardArrowDownIcon />
+          <div className={classes.downArrow}>
+            <KeyboardArrowDownIcon />
+          </div>
         </div>
         <div className={classes.orangeBannerTop} />
       </div>

@@ -81,6 +81,9 @@ const useStyles = makeStyles((theme: Theme) =>
       width: "100%",
       height: "8%",
       backgroundColor: "#FF9900",
+      [theme.breakpoints.down("sm")]: {
+        height: "15%",
+      },
     },
     content: {
       zIndex: 1,
@@ -90,8 +93,8 @@ const useStyles = makeStyles((theme: Theme) =>
       alignItems: "center",
       [theme.breakpoints.down("sm")]: {
         height: "80vh",
-        marginTop: "10vh",
-        marginBottom: "10vh",
+        marginTop: "5vh",
+        marginBottom: "15vh",
       },
     },
     backgroundHeader: {
@@ -102,7 +105,7 @@ const useStyles = makeStyles((theme: Theme) =>
       color: "#EEEEEE",
       marginBottom: "1rem",
       [theme.breakpoints.down("sm")]: {
-        fontSize: "3rem",
+        fontSize: "2.2rem",
       },
       [theme.breakpoints.up("md")]: {
         fontSize: "4rem",

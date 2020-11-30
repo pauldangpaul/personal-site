@@ -5,7 +5,7 @@ div[class^="makeStyles-downArrow-"] {
 @keyframes down-arrow-fade {
   0% {
     opacity: 0;
-    bottom: 6%;
+    padding-top: 0px;
   }
   25% {
     opacity: 1;
@@ -15,6 +15,6 @@ div[class^="makeStyles-downArrow-"] {
   }
   100% {
     opacity: 0;
-    bottom: 3%;
+    padding-top: 10px;
   }
 }
