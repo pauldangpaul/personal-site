@@ -72,6 +72,7 @@ module.exports = {
             title: 'Meet Paul Dang',
             template: "./src/index.html",
             filename: "./index.html",
+            favicon: "./src/assets/icons/my-head.ico"
           })
     ],
     output: {

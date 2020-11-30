@@ -3,9 +3,9 @@ import { useState, useEffect } from "react";
 
 import theme from "../styles/createMuiTheme";
 
-import walletImg from "../assets/images/wallet.webp";
-import calculatorImg from "../assets/images/calculator.webp";
-import shoppingImg from "../assets/images/shopping.webp";
+import walletImg from "../assets/images/bg/wallet.webp";
+import calculatorImg from "../assets/images/bg/calculator.webp";
+import shoppingImg from "../assets/images/bg/shopping.webp";
 
 import {
   ThemeProvider,

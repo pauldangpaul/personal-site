@@ -3,7 +3,8 @@ import orange from "@material-ui/core/colors/orange";
 
 let theme = createMuiTheme({
   typography: {
-    fontWeightRegular: 600,
+    fontWeightRegular: 300,
+    fontFamily: "europa, sans-serif",
   },
   palette: {
     primary: orange,

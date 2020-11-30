@@ -2,7 +2,7 @@ import * as React from "react";
 import { useState, useEffect } from "react";
 import theme from "../styles/createMuiTheme";
 import headshotImg from "../assets/images/prof-headshot.webp";
-import whiteImg from "../assets/images/white.webp";
+import whiteImg from "../assets/images/bg/white.webp";
 import { useInView } from "react-intersection-observer";
 import { CSSTransition } from "react-transition-group";
 import "../styles/animations.css";
@@ -100,10 +100,24 @@ const useStyles = makeStyles((theme: Theme) =>
     },
     downArrow: {
       position: "absolute",
-      bottom: "7%",
+      bottom: "5%",
     },
     hidden: {
       opacity: 0,
+    },
+    orangeBannerTop: {
+      position: "absolute",
+      top: 0,
+      width: "100%",
+      height: "8%",
+      backgroundColor: "#FF9900",
+    },
+    orangeBannerBottom: {
+      position: "absolute",
+      bottom: 0,
+      width: "100%",
+      height: "8%",
+      backgroundColor: "#FF9900",
     },
   })
 );
@@ -146,9 +160,12 @@ const HomePage = () => {
                 FULL-STACK DEVELOPER
               </div>
               <div className={classes.paragraph}>
-                <br />I am driven by the intersection of finance, user
-                experience and technology, and am determined to help build its
-                future.
+                <br />
+                Driven by the intersection of finance, user experience and
+                technology, and determined to help build its future.
+                <br />
+                <br />
+                More about me below - and let's connect!
               </div>
             </div>
           </CSSTransition>
@@ -156,6 +173,7 @@ const HomePage = () => {
         <div className={classes.downArrow}>
           <KeyboardArrowDownIcon />
         </div>
+        <div className={classes.orangeBannerTop} />
       </div>
     </>
   );

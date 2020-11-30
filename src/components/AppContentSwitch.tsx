@@ -26,6 +26,8 @@ import LinksPage from "./LinksPage";
 import ProjectsPage from "./ProjectsPage";
 import SmallTalkPage from "./SmallTalkPage";
 import WorkPage from "./WorkPage";
+import AvanadePage from "./AvanadePage";
+import SkillsPage from "./SkillsPage";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -43,32 +45,32 @@ const AppContentSwitch = () => {
 
   return (
     <Switch>
-      <div
-        // style={{
-        //   display: "flex",
-        //   justifyContent: "center",
-        //   flexDirection: "column",
-        // }}
-        className={classes.container}
-      >
+      <div className={classes.container}>
         <Route exact path="/">
           <HomePage />
           <WorkPage />
-          <ProjectsPage />
+          <AvanadePage />
+          <SkillsPage />
           <LinksPage />
         </Route>
-        <Route path="/work">
+        {/* <Route path="/background">
           <WorkPage />
         </Route>
-        <Route path="/projects">
-          <ProjectsPage />
+        <Route path="/work">
+          <AvanadePage />
         </Route>
-        <Route path="/small-talk">
-          <SmallTalkPage />
+        <Route path="/skills">
+          <SkillsPage />
+        </Route>
+        <Route path="/bio">
+          <LinksPage />
+        </Route>
+        <Route path="/testimonies">
+          <LinksPage />
         </Route>
         <Route path="/links">
           <LinksPage />
-        </Route>
+        </Route> */}
       </div>
     </Switch>
   );

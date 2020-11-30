@@ -35,14 +35,20 @@ import DeviceIndicator from "./DeviceIndicator";
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     navBar: {
-      top: "1em",
+      top: "1.2em",
       position: "absolute",
       display: "flex",
       justifyContent: "center",
       width: "100%",
       zIndex: 1,
+      color: "#EEEEEE",
     },
-    link: {
+    navBarlink: {
+      display: "flex",
+      textDecoration: "none",
+      color: "white",
+    },
+    menuLink: {
       display: "flex",
       textDecoration: "none",
       color: "black",
@@ -55,8 +61,9 @@ const useStyles = makeStyles((theme: Theme) =>
     menuButton: {
       position: "absolute",
       right: "1em",
-      top: "1em",
+      top: "1.2em",
       zIndex: 1,
+      color: "white",
     },
     listItem: {
       width: "18em",
@@ -81,9 +88,11 @@ const App = () => {
 
   const menuItem = [
     { link: "/", label: "HOME" },
-    { link: "/work", label: "WORK + SKILLS" },
-    { link: "/projects", label: "PROJECTS" },
-    { link: "/small-talk", label: "SMALL TALK" },
+    { link: "/background", label: "BACKGROUND" },
+    { link: "/work", label: "WORK" },
+    { link: "/skills", label: "SKILLS" },
+    { link: "/bio", label: "SHORT BIO" },
+    { link: "/testimonies", label: "TESTIMONIES" },
     { link: "/links", label: "LINKS" },
   ];
 
@@ -91,10 +100,10 @@ const App = () => {
     <ThemeProvider theme={theme}>
       <CssBaseline>
         <HashRouter>
-          {deviceSize > mediaQuerySize.portaitTablet && (
+          {/* {deviceSize > mediaQuerySize.portaitTablet && (
             <Breadcrumbs className={classes.navBar}>
               {menuItem.map((item) => (
-                <Link to={item.link} className={classes.link}>
+                <Link to={item.link} className={classes.navBarlink}>
                   <Typography>{item.label}</Typography>
                 </Link>
               ))}
@@ -119,7 +128,7 @@ const App = () => {
                 <>
                   <Link
                     to={item.link}
-                    className={classes.link}
+                    className={classes.menuLink}
                     onClick={() => setMenuOpen(false)}
                   >
                     <ListItem className={classes.listItem}>
@@ -138,7 +147,7 @@ const App = () => {
               )}
             </div>
             <DeviceIndicator />
-          </SwipeableDrawer>
+          </SwipeableDrawer> */}
           <AppContentSwitch />
         </HashRouter>
       </CssBaseline>

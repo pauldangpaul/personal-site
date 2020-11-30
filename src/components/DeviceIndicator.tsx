@@ -16,7 +16,7 @@ import useMediaQuery from "@material-ui/core/useMediaQuery";
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     deviceIndicator: {
-      marginBottom: "0.5em",
+      marginBottom: "1em",
     },
     deviceContainer: {
       padding: "0.3em",

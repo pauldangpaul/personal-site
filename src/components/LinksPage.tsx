@@ -9,6 +9,7 @@ import ResumePdf from "../assets/resume.pdf";
 import githubLogo from "../assets/icons/github.svg";
 import linkedinLogo from "../assets/icons/linkedin.svg";
 import resumeLogo from "../assets/icons/resume.svg";
+import emailIcon from "../assets/icons/email-icon.svg";
 
 import {
   ThemeProvider,
@@ -29,7 +30,7 @@ const useStyles = makeStyles((theme: Theme) =>
       display: "flex",
       justifyContent: "center",
       alignItems: "center",
-      fontSize: "4rem",
+      fontSize: "1rem",
       background: "#EEE",
       padding: "10%",
     },
@@ -61,6 +62,7 @@ const useStyles = makeStyles((theme: Theme) =>
       flexDirection: "column",
       alignItems: "start",
       justifyContent: "center",
+      margin: "2rem 0rem",
     },
     headshotImage: {
       borderRadius: "10%",
@@ -74,6 +76,11 @@ const useStyles = makeStyles((theme: Theme) =>
       [theme.breakpoints.up("lg")]: {
         height: "20rem",
       },
+    },
+    lastQuoteBox: {
+      width: "100%",
+      padding: "1rem",
+      textAlign: "center",
     },
   })
 );
@@ -132,6 +139,20 @@ const LinksPage = () => {
                 />
                 Resume (PDF)
               </Button>
+              <Button target="_blank" href="mailto: pauldang.dev@gmail.com">
+                <img
+                  className={classes.iconLogo}
+                  src={emailIcon}
+                  alt="Email Me"
+                />
+                PAULDANG.DEV@GMAIL.COM
+              </Button>
+            </div>
+            <div className={classes.lastQuoteBox}>
+              <i>
+                Thank you for swiping all the way down with me, and please reach
+                out!
+              </i>
             </div>
           </div>
         </CSSTransition>
