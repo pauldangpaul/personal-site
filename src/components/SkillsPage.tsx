@@ -28,19 +28,19 @@ const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     panel: {
       scrollSnapAlign: "start",
-      height: "100vh",
       display: "flex",
       justifyContent: "center",
       alignItems: "center",
       background: `white`,
       backgroundSize: "cover",
       position: "relative",
+      padding: "2rem 0",
     },
     orangeBannerBottom: {
       position: "absolute",
       bottom: 0,
       width: "100%",
-      height: "40%",
+      height: "50%",
       backgroundColor: "#FF9900",
     },
     content: {
@@ -55,29 +55,47 @@ const useStyles = makeStyles((theme: Theme) =>
       display: "flex",
       flexDirection: "column",
       alignItems: "center",
-      padding: "2rem 2rem",
       background: "white",
       boxShadow: "0px 20px 20px 2px rgba(0, 0, 0, 0.25)",
       borderRadius: "25px",
+      padding: "1rem 0 2rem 0",
+      marginBottom: "5rem",
     },
     skillsSectionHeader: {
+      display: "flex",
+      flexDirection: "column",
+      alignItems: "center",
       fontSize: "3rem",
-      paddingBottom: "2rem",
+      paddingBottom: "1rem",
+      textAlign: "center",
+      [theme.breakpoints.down("sm")]: {
+        fontSize: "1.25rem",
+        padding: "2rem 0 1rem 0",
+      },
+    },
+    animatedUnderline: {
+      height: "2px",
+      background: "#111111",
+      width: "75%",
     },
     skillsCardList: {
       display: "flex",
+      flexWrap: "wrap",
       justifyContent: "space-around",
       width: "100%",
     },
     skillCard: {
       display: "flex",
       flexDirection: "column",
-      alignItems: "start",
-      width: "15rem",
+      alignItems: "center",
+      width: "20rem",
+      marginTop: "3rem",
     },
     skillCardHeader: {
-      fontSize: "1.75rem",
-      marginBottom: "1rem",
+      fontSize: "2rem",
+      [theme.breakpoints.down("sm")]: {
+        fontSize: "1.2rem",
+      },
     },
     skillList: {
       display: "flex",
@@ -87,13 +105,20 @@ const useStyles = makeStyles((theme: Theme) =>
     },
     skillItem: {
       display: "flex",
-      width: "100%",
-      height: "2.1rem",
+      height: "3rem",
       alignItems: "center",
+      fontSize: "1.2rem",
+      [theme.breakpoints.down("sm")]: {
+        height: "2rem",
+        fontSize: "1rem",
+      },
     },
     skillImg: {
-      width: "2rem",
-      paddingRight: "0.5rem",
+      width: "3rem",
+      paddingRight: "1rem",
+      [theme.breakpoints.down("sm")]: {
+        width: "2.5rem",
+      },
     },
   })
 );
@@ -113,6 +138,7 @@ const SkillsPage = () => {
           <div className={classes.skillsSection}>
             <div className={classes.skillsSectionHeader}>
               TECHNOLOGY & SKILLS
+              <div className={classes.animatedUnderline} />
             </div>
             <div className={classes.skillsCardList}>
               <div className={classes.skillCard}>

@@ -43,9 +43,9 @@ const useStyles = makeStyles((theme: Theme) =>
       zIndex: 1,
       display: "flex",
       flexDirection: "column",
-      width: "100%",
       alignItems: "center",
-      height: "80vh",
+      width: "100%",
+      height: "100%",
       marginTop: "10vh",
       marginBottom: "10vh",
     },
@@ -57,22 +57,38 @@ const useStyles = makeStyles((theme: Theme) =>
       color: "white",
       fontSize: "2rem",
       height: "60%",
+      [theme.breakpoints.down("sm")]: {
+        flexDirection: "column-reverse",
+        alignItems: "center",
+      },
     },
     descriptionText: {
       padding: "2rem 5rem",
       width: "70%",
+      [theme.breakpoints.down("sm")]: {
+        fontSize: "1.2rem",
+        textAlign: "center",
+        padding: "1rem",
+        width: "100%",
+      },
     },
     industryBackground: {
       background: "white",
+      height: "13rem",
       width: "30%",
       display: "flex",
       alignItems: "center",
       margin: "2rem 0",
       position: "relative",
+      [theme.breakpoints.down("sm")]: {
+        width: "80%",
+        margin: "0 0 0 20%",
+        height: "50%",
+      },
     },
     industryImgCarousel: {
       position: "relative",
-      height: "13rem",
+      height: "90%",
       left: "-2rem",
     },
     companyLogosCard: {
@@ -83,9 +99,21 @@ const useStyles = makeStyles((theme: Theme) =>
       height: "45%",
       background: "white",
       padding: "2rem",
+      boxShadow: "0px -20px 20px 0px #00000029",
+      borderRadius: "20px",
+      [theme.breakpoints.down("sm")]: {
+        width: "100%",
+        height: "30%",
+      },
     },
     companyLogo: {
       width: "15rem",
+      [theme.breakpoints.down("md")]: {
+        width: "11rem",
+      },
+      [theme.breakpoints.down("sm")]: {
+        width: "5rem",
+      },
     },
   })
 );

@@ -28,11 +28,12 @@ import SmallTalkPage from "./SmallTalkPage";
 import WorkPage from "./WorkPage";
 import AvanadePage from "./AvanadePage";
 import SkillsPage from "./SkillsPage";
+import TestimoniesPage from "./TestimoniesPage";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     container: {
-      scrollSnapType: "y mandatory",
+      // scrollSnapType: "y mandatory",
       overflowY: "scroll",
       height: "100vh",
       width: "100%",
@@ -51,6 +52,7 @@ const AppContentSwitch = () => {
           <WorkPage />
           <AvanadePage />
           <SkillsPage />
+          <TestimoniesPage />
           <LinksPage />
         </Route>
         {/* <Route path="/background">

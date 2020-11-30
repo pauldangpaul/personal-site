@@ -23,18 +23,24 @@ const useStyles = makeStyles((theme: Theme) =>
       height: "100vh",
       display: "flex",
       justifyContent: "center",
-      alignItems: "flex-start",
+      alignItems: "center",
       fontSize: "4rem",
       flexWrap: "wrap",
       background: `url(${whiteImg})  center center`,
       padding: "3rem 1rem",
       position: "relative",
+      [theme.breakpoints.down("sm")]: {
+        alignItems: "flex-start",
+      },
     },
     introCard: {
       display: "flex",
-      flexDirection: "column",
+      flexDirection: "row",
       justifyContent: "center",
       alignItems: "center",
+      [theme.breakpoints.down("sm")]: {
+        flexDirection: "column",
+      },
     },
     introCardText: {
       display: "flex",
@@ -100,6 +106,11 @@ const useStyles = makeStyles((theme: Theme) =>
     },
     downArrow: {
       display: "flex",
+      margin: "2rem",
+      [theme.breakpoints.up("md")]: {
+        position: "absolute",
+        bottom: "5%",
+      },
     },
     hidden: {
       opacity: 0,
